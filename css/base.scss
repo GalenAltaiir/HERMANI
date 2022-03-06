@@ -1,0 +1,542 @@
+// FONT
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+$tablet: 768px;
+$desktop: 1024px;
+
+$large: 1.2rem;
+$normal: 1rem;
+$small: .75rem;
+
+body, html{
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.debug{
+    height: 10vh;
+    width: 100vw;
+    background: red;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+
+    .slideDown {
+        transition: top 0.3s;
+        top: 0;
+    }
+    
+    header{
+        transition: top 0.3s;
+        background: white;
+        position: fixed;
+        z-index: 100;
+        display: grid;
+        width: 100vw;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-bottom: 2px solid black;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas: "logo .... .... .... .... menu";
+        top: -60px;
+
+        
+        
+        // LOGO
+        .logo{
+            grid-area: logo;
+            h1{
+                margin: 0;
+                margin-left: 10px;
+                font-weight: 400;
+            }
+        }
+
+        // ANIMATIONS
+            @keyframes GrowOut {
+                from {
+                    transform: scale(1.5);
+                }
+
+                to {
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes GrowIn {
+                from {
+                    transform: scale(1);
+                }
+
+                to {
+                    transform: scale(1.5);
+                }
+            }
+
+        nav{
+            grid-area: menu;
+            margin: auto;
+            margin-right: 20px;
+            z-index: 10;
+            a{
+                padding: 5px;
+                text-decoration: none;
+                color: black;
+
+                #cart, #heart{
+                    animation: GrowOut .25s forwards;
+                    transition: all .25s;
+                }
+                
+                #cart:hover, #heart:hover{
+                    animation: GrowIn .25s forwards;
+                }
+
+                #heart:hover{
+                    color: red;
+                    transition: all .25s;
+                }
+            }
+        }
+        
+    } // end of header
+    main{
+        .overlay{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            opacity: 0;
+            display: none;
+            z-index: 2;
+        }
+
+        .dark{
+            position: fixed;
+            display: block;
+            opacity: .3;
+        }
+        .nav-container{
+            position: relative;
+            
+            nav{
+                position: fixed;
+                right: -250px;
+                background: white;
+                width: 250px;
+                height: 100%;
+                padding-top: 20px;
+                transition: right 0.3s;
+                z-index: 10;
+
+                
+                a{
+                    display: block;
+                    margin-top: 4px;
+                    padding: 15px;
+
+                i{
+                    float: right;
+                }
+            }
+            
+            a:nth-child(1) {
+            font-size: 1.2rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+            }
+
+            a:nth-child(2){
+                margin-top: 50px;;
+            }
+
+
+        }
+
+        .slideOut{
+            transition: right 0.3s;
+            right: 0px;
+        }
+    } // end of nav-container
+
+    .logoAnim{
+        height: 120px;
+        padding-top: 80px;
+        display: grid;
+        justify-content: center;
+        h2{
+            position: relative;
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 2rem;
+            text-align: center;
+            grid-template-columns: repeat(8, 1fr);
+            column-gap: none;
+            margin: 0;
+            padding: 0;
+            .logoText{
+                display: inline-block;
+                opacity: 0;
+            }
+
+            
+
+            #H{animation: flyIn .5s forwards; animation-delay: 0.00s; }
+            #E{animation: flyIn .5s forwards; animation-delay: 0.25s; }
+            #R{animation: flyIn .5s forwards; animation-delay: 0.50s; }
+            #M{animation: flyIn .5s forwards; animation-delay: 0.75s; }
+            #A{animation: flyIn .5s forwards; animation-delay: 1.00s; }
+            #N{animation: flyIn .5s forwards; animation-delay: 1.25s; }
+            #I{animation: flyIn .5s forwards; animation-delay: 1.50s; }
+
+            .underline {
+                grid-column: 1/-1;
+                grid-row: 2/3;
+                align-items: center;
+                display: grid;
+                justify-self: center;
+                background-color: black;
+                color: transparent;
+                height: 0;
+
+                animation: fancyFadeIn 3s forwards;
+                animation-delay: 2s;
+            }
+
+            @keyframes flyIn {
+                from{opacity: 0;}
+                to{opacity: 1;}
+            }
+
+            @keyframes fancyFadeIn {
+                from{
+                    height: 0;
+                    width: 0;
+                    color: transparent;
+                }
+                
+                50%{
+                    width: 280px;
+                    height: 1px;
+                    color: transparent;
+                }
+                
+                to{
+                    width: 280px;
+                    height: 40px;
+                    color: white;
+                }
+            }
+        }
+    } // end of Logo Animation
+
+    .categories{
+        
+        #shopWomen{
+            margin: 25px;
+            background: #000;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/woman.jpg");
+            background-position: center;
+            background-size: cover;
+            height: 30vh;
+            transition: all .3s;
+
+            @media only screen and (min-width: $tablet) {
+                margin: 10px;
+            }
+            
+            &:hover{
+                a{
+                    transition: all .3s;
+                    color: pink;
+                }
+            }
+        }
+
+        #shopMen {
+            margin: 25px;
+            background: #000;
+            background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/img/man.jpg");
+            background-position: center;
+            background-size: cover;
+            height: 30vh;
+            transition: all .3s;
+
+            @media only screen and (min-width: $tablet) {
+                margin: 10px;
+            }
+
+            &:hover {
+                a {
+                    transition: all .3s;
+                    color: lightseagreen;
+                }
+            }
+        }
+
+        .bigButton{
+            position: relative;
+            display: grid;
+            a{
+                display: grid;
+                width: 100%;
+                height: 100%;
+                color: white;
+                text-align: center;
+                align-items: center;
+                font-size: 1.5rem;
+            }
+        }
+    } // end of categories
+
+    .seasonal{
+        margin: 25px;
+        @media only screen and (min-width: $tablet) {
+            margin: 10px;
+        }
+        display: grid;
+
+        .mediumButton{
+            background: #000;
+            aspect-ratio: 1/1.5;
+            display: grid;
+
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/img/spring.jpg");
+            background-position: center;
+            background-size: cover;
+            filter: contrast(100%) brightness(100%);
+            transition: .35s;
+
+            &:hover{
+                filter: contrast(120%) brightness(110%);
+                transition: .35s;
+            }
+
+            a {
+                display: grid;
+                width: 100%;
+                height: 100%;
+                color: white;
+                text-align: center;
+                align-items: center;
+                font-size: 1.35rem;
+            }
+        }
+    }
+
+    .subCategories{
+        margin: 25px;
+        
+        @media only screen and (min-width: $tablet) {
+            margin: 0px;
+        }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        #clothing, #bags, #shoes, #home{
+            margin: 10px;
+            filter: grayscale(1) brightness(100%) contrast(100%);
+            background-position: center;
+            background-size: cover;
+            transition: .35s;
+
+            &:hover{
+                filter: grayscale(0) brightness(150%) contrast(110%);
+                transition: .35s;
+            }
+        }
+
+        #clothing{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/img/clothing.jpg");
+        }
+
+        #shoes {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("/img/shoes.jpg");
+        }
+
+        #bags {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("/img/bags.jpg");
+        }
+
+        #home {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("/img/home.jpg");
+        }
+
+        .smallButton{
+            background: #000;
+            aspect-ratio: 1/1;
+            display: grid;
+
+            a{
+                display: grid;
+                width: 100%;
+                height: 100%;
+                color: white;
+                text-align: center;
+                align-items: center;
+                font-size: 1.2rem;
+            }
+        }
+    } // end of subcat
+
+    .kids{
+        margin: 35px;
+        @media only screen and (min-width: $tablet) {
+            margin: 10px;
+        }
+        .bigButton {
+            height: 20vh;
+            position: relative;
+            display: grid;
+
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/img/kids.jpg");
+            background-position: center;
+            background-size: cover;
+            filter: grayscale(0) brightness(100%) contrast(100%);
+            transition: .45s;
+            
+            &:hover{
+                transition: .45s;
+                filter: grayscale(0) brightness(140%) contrast(110%);
+            }
+
+            a {
+                display: grid;
+                height: 100%;
+                color: white;
+                text-align: center;
+                align-items: center;
+                font-size: 1.5rem;
+            }
+        }
+    } // end of kids section
+
+    } // end of main
+
+    footer{
+        font-size: $small;
+        nav{
+            a{
+                color: white;
+            }
+        }
+        background: #000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+} // end of body
+
+// Medium Screens
+@media only screen and (min-width: $tablet) {
+    main{
+        .categories{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .logoAnim{
+                grid-column: 1/-1;
+            }
+            
+        }
+
+        .seasonal{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+
+            .mediumButton{
+                margin: auto;
+                width: 100%;
+                height: 40vw;
+            }
+        }
+
+        .subCategories{
+            grid-template-columns: repeat(4, 1fr) !important;
+        }
+
+        .kids{
+            .bigButton{
+                margin: 0px;
+                width: 100%;
+                height: 40vw;
+            }
+        }
+    }
+
+} // end of medium screen
+
+// Large Screens
+@media only screen and (min-width: $desktop) {
+    body{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: 
+        "head head head head head head head head head head head head"
+        ".... .... main main main main main main main main .... ...."
+        "foot foot foot foot foot foot foot foot foot foot foot foot ";
+
+        header{
+            grid-area: head;
+        }
+
+        main{
+            grid-area: main;
+
+            .seasonal{
+                .mediumButton{
+                    width: 100%;
+                    height: 30vw;
+                }
+            }
+
+            .kids{
+                .bigButton{
+                    width: 100%;
+                    height: 20vw;
+                }
+            }
+        }
+
+        footer{
+            grid-area: foot;
+        }
+    }
+} // end of large screen
+
+// ENTRANCE ANIMATIONS
+
+
+.fadeIn {
+    animation: fadeIn .35s forwards ease-in-out;
+    animation-delay: .0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+

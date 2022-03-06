@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Demo</title>
+</head>
+<body>
+    <script>
+        const api = "http://localhost/cockpit/api/collections/get/MenClothing"
+        
+        async function getApi(){
+            const response = await fetch(api)
+            const data = await response.json()
+            const {entries} = data
+            document.write(entries[0].itemName)
+
+        }
+        getApi()
+    </script>
+    <div class="container"></div>
+
+</body>
+</html>

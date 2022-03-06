@@ -1,0 +1,683 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+body, html {
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.debug {
+  height: 10vh;
+  width: 100vw;
+  background: red;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .slideDown {
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  top: 0;
+}
+
+body header {
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  background: white;
+  position: fixed;
+  z-index: 100;
+  display: -ms-grid;
+  display: grid;
+  width: 100vw;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 2px solid black;
+  -ms-grid-columns: 1fr 4fr 1fr;
+      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-areas: "logo .... .... .... .... menu";
+  top: -60px;
+}
+
+body header .logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+body header .logo h1 {
+  margin: 0;
+  margin-left: 10px;
+  font-weight: 400;
+}
+
+@-webkit-keyframes GrowOut {
+  from {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes GrowOut {
+  from {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes GrowIn {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes GrowIn {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+body header nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+  grid-area: menu;
+  margin: auto;
+  margin-right: 20px;
+  z-index: 10;
+}
+
+body header nav a {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+body header nav a #cart, body header nav a #heart {
+  -webkit-animation: GrowOut .25s forwards;
+          animation: GrowOut .25s forwards;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+body header nav a #cart:hover, body header nav a #heart:hover {
+  -webkit-animation: GrowIn .25s forwards;
+          animation: GrowIn .25s forwards;
+}
+
+body header nav a #heart:hover {
+  color: red;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+body main .overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  opacity: 0;
+  display: none;
+  z-index: 2;
+}
+
+body main .dark {
+  position: fixed;
+  display: block;
+  opacity: .3;
+}
+
+body main .nav-container {
+  position: relative;
+}
+
+body main .nav-container nav {
+  position: fixed;
+  right: -250px;
+  background: white;
+  width: 250px;
+  height: 100%;
+  padding-top: 20px;
+  -webkit-transition: right 0.3s;
+  transition: right 0.3s;
+  z-index: 10;
+}
+
+body main .nav-container nav a {
+  display: block;
+  margin-top: 4px;
+  padding: 15px;
+}
+
+body main .nav-container nav a i {
+  float: right;
+}
+
+body main .nav-container nav a:nth-child(1) {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+body main .nav-container nav a:nth-child(2) {
+  margin-top: 50px;
+}
+
+body main .nav-container .slideOut {
+  -webkit-transition: right 0.3s;
+  transition: right 0.3s;
+  right: 0px;
+}
+
+body main .logoAnim {
+  height: 120px;
+  padding-top: 80px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .logoAnim h2 {
+  position: relative;
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  -webkit-column-gap: none;
+          column-gap: none;
+  margin: 0;
+  padding: 0;
+}
+
+body main .logoAnim h2 .logoText {
+  display: inline-block;
+  opacity: 0;
+}
+
+body main .logoAnim h2 #H {
+  -webkit-animation: flyIn .5s forwards;
+          animation: flyIn .5s forwards;
+  -webkit-animation-delay: 0.00s;
+          animation-delay: 0.00s;
+}
+
+body main .logoAnim h2 #E {
+  -webkit-animation: flyIn .5s forwards;
+          animation: flyIn .5s forwards;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+body main .logoAnim h2 #R {
+  -webkit-animation: flyIn .5s forwards;
+          animation: flyIn .5s forwards;
+  -webkit-animation-delay: 0.50s;
+          animation-delay: 0.50s;
+}
+
+body main .logoAnim h2 #M {
+  -webkit-animation: flyIn .5s forwards;
+          animation: flyIn .5s forwards;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+body main .logoAnim h2 #A {
+  -webkit-animation: flyIn .5s forwards;
+          animation: flyIn .5s forwards;
+  -webkit-animation-delay: 1.00s;
+          animation-delay: 1.00s;
+}
+
+body main .logoAnim h2 #N {
+  -webkit-animation: flyIn .5s forwards;
+          animation: flyIn .5s forwards;
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+}
+
+body main .logoAnim h2 #I {
+  -webkit-animation: flyIn .5s forwards;
+          animation: flyIn .5s forwards;
+  -webkit-animation-delay: 1.50s;
+          animation-delay: 1.50s;
+}
+
+body main .logoAnim h2 .underline {
+  grid-column: 1/-1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: black;
+  color: transparent;
+  height: 0;
+  -webkit-animation: fancyFadeIn 3s forwards;
+          animation: fancyFadeIn 3s forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+@-webkit-keyframes flyIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flyIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fancyFadeIn {
+  from {
+    height: 0;
+    width: 0;
+    color: transparent;
+  }
+  50% {
+    width: 280px;
+    height: 1px;
+    color: transparent;
+  }
+  to {
+    width: 280px;
+    height: 40px;
+    color: white;
+  }
+}
+
+@keyframes fancyFadeIn {
+  from {
+    height: 0;
+    width: 0;
+    color: transparent;
+  }
+  50% {
+    width: 280px;
+    height: 1px;
+    color: transparent;
+  }
+  to {
+    width: 280px;
+    height: 40px;
+    color: white;
+  }
+}
+
+body main .categories #shopWomen {
+  margin: 25px;
+  background: #000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/woman.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/woman.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 30vh;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+@media only screen and (min-width: 768px) {
+  body main .categories #shopWomen {
+    margin: 10px;
+  }
+}
+
+body main .categories #shopWomen:hover a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: pink;
+}
+
+body main .categories #shopMen {
+  margin: 25px;
+  background: #000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/man.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/man.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 30vh;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+@media only screen and (min-width: 768px) {
+  body main .categories #shopMen {
+    margin: 10px;
+  }
+}
+
+body main .categories #shopMen:hover a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: lightseagreen;
+}
+
+body main .categories .bigButton {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+}
+
+body main .categories .bigButton a {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+}
+
+body main .seasonal {
+  margin: 25px;
+  display: -ms-grid;
+  display: grid;
+}
+
+@media only screen and (min-width: 768px) {
+  body main .seasonal {
+    margin: 10px;
+  }
+}
+
+body main .seasonal .mediumButton {
+  background: #000;
+  aspect-ratio: 1/1.5;
+  display: -ms-grid;
+  display: grid;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/spring.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/spring.jpg");
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: contrast(100%) brightness(100%);
+          filter: contrast(100%) brightness(100%);
+  -webkit-transition: .35s;
+  transition: .35s;
+}
+
+body main .seasonal .mediumButton:hover {
+  -webkit-filter: contrast(120%) brightness(110%);
+          filter: contrast(120%) brightness(110%);
+  -webkit-transition: .35s;
+  transition: .35s;
+}
+
+body main .seasonal .mediumButton a {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.35rem;
+}
+
+body main .subCategories {
+  margin: 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+@media only screen and (min-width: 768px) {
+  body main .subCategories {
+    margin: 0px;
+  }
+}
+
+body main .subCategories #clothing, body main .subCategories #bags, body main .subCategories #shoes, body main .subCategories #home {
+  margin: 10px;
+  -webkit-filter: grayscale(1) brightness(100%) contrast(100%);
+          filter: grayscale(1) brightness(100%) contrast(100%);
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: .35s;
+  transition: .35s;
+}
+
+body main .subCategories #clothing:hover, body main .subCategories #bags:hover, body main .subCategories #shoes:hover, body main .subCategories #home:hover {
+  -webkit-filter: grayscale(0) brightness(150%) contrast(110%);
+          filter: grayscale(0) brightness(150%) contrast(110%);
+  -webkit-transition: .35s;
+  transition: .35s;
+}
+
+body main .subCategories #clothing {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/clothing.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/clothing.jpg");
+}
+
+body main .subCategories #shoes {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/shoes.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/shoes.jpg");
+}
+
+body main .subCategories #bags {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/bags.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/bags.jpg");
+}
+
+body main .subCategories #home {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/home.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/home.jpg");
+}
+
+body main .subCategories .smallButton {
+  background: #000;
+  aspect-ratio: 1/1;
+  display: -ms-grid;
+  display: grid;
+}
+
+body main .subCategories .smallButton a {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+}
+
+body main .kids {
+  margin: 35px;
+}
+
+@media only screen and (min-width: 768px) {
+  body main .kids {
+    margin: 10px;
+  }
+}
+
+body main .kids .bigButton {
+  height: 20vh;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/img/kids.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/kids.jpg");
+  background-position: center;
+  background-size: cover;
+  -webkit-filter: grayscale(0) brightness(100%) contrast(100%);
+          filter: grayscale(0) brightness(100%) contrast(100%);
+  -webkit-transition: .45s;
+  transition: .45s;
+}
+
+body main .kids .bigButton:hover {
+  -webkit-transition: .45s;
+  transition: .45s;
+  -webkit-filter: grayscale(0) brightness(140%) contrast(110%);
+          filter: grayscale(0) brightness(140%) contrast(110%);
+}
+
+body main .kids .bigButton a {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  color: white;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+}
+
+body footer {
+  font-size: 0.75rem;
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+body footer nav a {
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  main .categories {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  main .categories .logoAnim {
+    grid-column: 1/-1;
+  }
+  main .seasonal {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  main .seasonal .mediumButton {
+    margin: auto;
+    width: 100%;
+    height: 40vw;
+  }
+  main .subCategories {
+    -ms-grid-columns: (1fr)[4] !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+  }
+  main .kids .bigButton {
+    margin: 0px;
+    width: 100%;
+    height: 40vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: "head head head head head head head head head head head head" ".... .... main main main main main main main main .... ...." "foot foot foot foot foot foot foot foot foot foot foot foot ";
+  }
+  body header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: head;
+  }
+  body main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-area: main;
+  }
+  body main .seasonal .mediumButton {
+    width: 100%;
+    height: 30vw;
+  }
+  body main .kids .bigButton {
+    width: 100%;
+    height: 20vw;
+  }
+  body footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-area: foot;
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn .35s forwards ease-in-out;
+          animation: fadeIn .35s forwards ease-in-out;
+  -webkit-animation-delay: .0;
+          animation-delay: .0;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=base.css.map */

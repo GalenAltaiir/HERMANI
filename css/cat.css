@@ -1,0 +1,66 @@
+.heading-section h1, .heading-section p {
+  margin: 15px;
+}
+
+.heading-section img {
+  border-top: 3px solid black;
+  width: 100%;
+  height: 20vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .heading-section img {
+    height: 30vh;
+  }
+}
+
+.men-subcat {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 10px;
+  margin: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .men-subcat {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.men-subcat .product-type {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  max-width: 45vw;
+  max-height: 45vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.men-subcat .product-type img {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.men-subcat .product-type .prod-name {
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  padding-top: 50%;
+  padding-bottom: 50%;
+}
+/*# sourceMappingURL=cat.css.map */
