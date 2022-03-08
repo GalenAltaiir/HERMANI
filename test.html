@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch API Demo</title>
-</head>
-<body>
-    <script>
-        const api = "http://localhost/cockpit/api/collections/get/MenClothing"
-        
-        async function getApi(){
-            const response = await fetch(api)
-            const data = await response.json()
-            const {entries} = data
-            document.write(entries[0].itemName)
+<div id="con">
 
-        }
-        getApi()
-    </script>
-    <div class="container"></div>
+</div>
+<button id = "next" onclick="next()">Next</button>
 
-</body>
-</html>
+<script>
+    let page = 1;
+    let con = document.getElementById("con");
+    con.innerHTML = "Current Page: " + page
+    
+    document.getElementById("next").onclick = function(){
+        page = page + 1;
+        con.innerHTML = "Current Page: " + page
+    }
+</script>
