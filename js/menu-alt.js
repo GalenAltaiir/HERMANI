@@ -5,7 +5,6 @@ function menu(){
 }
 
 window.addEventListener("scroll", () => {
-    console.log(window.pageYOffset);
     var nav = document.getElementById("topNav")
     if(window.pageYOffset >= 50){
 

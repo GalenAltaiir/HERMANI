@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HERMANI | MEN</title>
-    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="css/base.css">
 
     <script src="https://kit.fontawesome.com/9880171930.js" crossorigin="anonymous"></script>
     <script src="js/menu-alt.js"></script>
-    <script defer src="js/search.js"></script>
+
+    <script async src="js/functions.js"></script>
+    <script async src="js/product.js"></script>
+    <script async src="js/gallery.js"></script>
 
 </head>
 
@@ -32,27 +35,41 @@
         <div class="overlay" id="overlay"></div>
 
         <div class="nav-container">
-            <nav id="menu">
-                <a id="close" onclick="menu()">X</a>
-                <a href="index.php">HOMEPAGE <i class="fa-solid fa-angle-right"></i></a>
-                <a href="products.html">SPRING 2022 <i class="fa-solid fa-angle-right"></i></a>
-                <a href="products.html">HOME <i class="fa-solid fa-angle-right"></i></a>
-                <a href="products.html">WOMEN <i class="fa-solid fa-angle-right"></i></a>
-                <a href="categories.php?for=men">MEN <i class="fa-solid fa-angle-right"></i></a>
-                <a href="products.html">KIDS <i class="fa-solid fa-angle-right"></i></a>
+            <nav id="menu" >
+                
             </nav>
         </div>
         <section class="heading-section" id = "head-sect">
-            <h1 id = "title"></h1>
-            <p>
-                A medium-length description of the product type can go here, this could
-                be for bags, shirts, or whatever else. This should give the client an
-                indication of what they're looking at.
-            </p>
+            <h1 id = "title">ItemName</h1>
+            <h3 id = "brand">BrandName</h3>
+            <h4 id = "price">ItemPrice</h4>
         </section>
+        <section class = "product-details" id = "prod-det">
+            <div class="images">
+                <div class="selected-image">
+                    <img id = "display-img" src="/img/bags.jpg">
+                    <button id = "next" onclick="prev()"><i class="fa-solid fa-angle-left"></i></button>
+                    <button id = "prev" onclick="next()"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
 
-        <section class="products" id = "products">
+                <div class="gallery">
+                    <img class = "gallery-img" src="/img/bags.jpg">
+                    <img class = "gallery-img" src="/img/bags.jpg">
+                    <img class = "gallery-img" src="/img/bags.jpg">
+                    <img class = "gallery-img" src="/img/bags.jpg">
+                </div>
+            </div>
 
+            <div class="desc">
+                <p>
+                    Some sort of item description can go here.
+                    Use this to talk about your product in more
+                    detail. It's where you really want to get
+                    the customer to buy it.
+                </p>
+            </div>
+
+            <button class = "addToCart" onclick="">Add To Cart</button>
         </section>
     </main>
 

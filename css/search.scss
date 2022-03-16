@@ -6,6 +6,10 @@ $large: 1.2rem;
 $normal: 1rem;
 $small: .75rem;
 
+main{
+    min-height: 100vh;
+}
+
 
 .heading-section {
     margin-top: 50px;
@@ -77,6 +81,22 @@ $small: .75rem;
             
             margin: 10px;
 
+        }
+
+        .prod-link{
+            background: black;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            transition: all .5s;
+
+            &:hover{
+                opacity: .2;
+                transition: all .5s;
+            }
         }
     }
 }
