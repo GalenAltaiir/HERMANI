@@ -11,6 +11,18 @@ body, html {
   background: red;
 }
 
+@media only screen and (min-width: 768px) {
+  .debug {
+    background: yellow;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .debug {
+    background: green;
+  }
+}
+
 a {
   text-decoration: none;
   color: black;

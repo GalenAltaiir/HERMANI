@@ -18,6 +18,13 @@ body, html{
     height: 10vh;
     width: 100vw;
     background: red;
+    @media only screen and (min-width: $tablet) {
+        background: yellow;
+    }
+
+    @media only screen and (min-width: $desktop) {
+        background: green;
+    }
 }
 
 a{
