@@ -1,0 +1,114 @@
+$tablet: 768px;
+$desktop: 1024px;
+
+$large: 1.2rem;
+$normal: 1rem;
+$small: .75rem;
+
+main{
+    .basket-container{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr;
+
+        h1{
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            grid-column: 1/-1;
+        }
+
+        .basket-items{
+            table{
+                padding: 10px;
+                width: 100%;
+                tr{
+                    display: grid;
+                    grid-template-columns: 3fr 1fr 1fr;
+                    align-items: center;
+                    border-bottom: 1px solid #ccc;
+
+                    th{
+                        border-bottom: 1px solid black;
+                        text-align-last: left;
+                    }
+                    
+                    td{
+                        display: grid;
+                        align-items: center;
+                        text-align: center;
+                        padding: 10px;
+
+                        .item-img{
+                            width: 50px;
+                            height: 50px;
+                            background-image: url("/img/shoes.jpg");
+                            background-size: cover;
+                        }
+                    }
+
+                    .item-thumb{
+                        display: grid;
+                        grid-template-columns: 1fr 4fr;
+                        text-align: center;
+                        justify-content: center;
+                    }
+                }
+
+                tr:nth-child(even){
+                    background-color: #f2f2f2;
+                }
+            }
+        }
+
+        .basket-summary{
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+
+            .summary-left{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 10px;
+                border-bottom: 1px solid black;
+            }
+
+            .summary-right{
+                margin: 15px;
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 10px;
+
+                .btn-checkout{
+                background: #000;
+                color: white;
+                padding: 10px;
+                cursor: pointer;
+                
+                &:hover{
+                    background: #ccc;
+                }
+            }
+        }
+    }
+}
+}
+
+@media only screen and (min-width: $tablet) {
+    main{
+        .basket-container{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+footer{
+    margin-top: 99vh;
+}

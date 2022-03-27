@@ -7,7 +7,8 @@
                 }
                 
                 const api = "http://localhost/cockpit/api/collections/get/"+values[0][1]+"Categories"
-
+                console.log(api);
+                
                 async function getApi(){
             /*
                 Asynchronous function which purpose is to fetch
@@ -22,9 +23,6 @@
                 of the JSON being stored on Cockpit which is a PHP based
                 CMS. This means that it can be hosted on a static web host,
                 so long the CMS is running elsewhere.
-
-                TO DO:
-                - LIMIT ENTRIES PER PAGE (50 maybe)
             */
             const response = await fetch(api)
             const data = await response.json()

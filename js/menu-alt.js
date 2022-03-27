@@ -6,7 +6,7 @@ function menu(){
 
 window.addEventListener("scroll", () => {
     var nav = document.getElementById("topNav")
-    if(window.pageYOffset >= 50){
+    if(window.pageYOffset >= 1){
 
         nav.style.top = "0";
         

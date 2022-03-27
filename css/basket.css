@@ -1,1 +1,131 @@
-/* No CSS *//*# sourceMappingURL=basket.css.map */
+main .basket-container {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+main .basket-container h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  grid-column: 1/-1;
+}
+
+main .basket-container .basket-items table {
+  padding: 10px;
+  width: 100%;
+}
+
+main .basket-container .basket-items table tr {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr 1fr;
+      grid-template-columns: 3fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+main .basket-container .basket-items table tr th {
+  border-bottom: 1px solid black;
+  text-align-last: left;
+}
+
+main .basket-container .basket-items table tr td {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+main .basket-container .basket-items table tr td .item-img {
+  width: 50px;
+  height: 50px;
+  background-image: url("/img/shoes.jpg");
+  background-size: cover;
+}
+
+main .basket-container .basket-items table tr .item-thumb {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .basket-container .basket-items table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+main .basket-container .basket-summary {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1rem;
+}
+
+main .basket-container .basket-summary .summary-left {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+main .basket-container .basket-summary .summary-right {
+  margin: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+main .basket-container .basket-summary .summary-right .btn-checkout {
+  background: #000;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+main .basket-container .basket-summary .summary-right .btn-checkout:hover {
+  background: #ccc;
+}
+
+@media only screen and (min-width: 768px) {
+  main .basket-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+footer {
+  margin-top: 99vh;
+}
+/*# sourceMappingURL=basket.css.map */

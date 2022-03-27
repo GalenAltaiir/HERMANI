@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/basket.css">
 
     <script src="https://kit.fontawesome.com/9880171930.js" crossorigin="anonymous"></script>
-    <script src="js/menu.js"></script>
+    <script src="js/menu-alt.js"></script>
 </head>
 
 <body>
@@ -27,21 +27,81 @@
     </header>
 
     <main>
-        <section>
-            <h1>Basket - X Item(s)</h1>
-        </section>
-
         <div class="overlay" id="overlay"></div>
         <div class="nav-container">
             <nav id="menu">
                 <a id="close" onclick="menu()">X</a>
-                <a href="products.html">SPRING 2022 <i class="fa-solid fa-angle-right"></i></a>
-                <a href="products.html">HOME <i class="fa-solid fa-angle-right"></i></a>
-                <a href="products.html">WOMEN <i class="fa-solid fa-angle-right"></i></a>
-                <a href="men/categories.html?category=men">MEN <i class="fa-solid fa-angle-right"></i></a>
-                <a href="products.html">KIDS <i class="fa-solid fa-angle-right"></i></a>
+                <a href="index.html">HOMEPAGE <i class="fa-solid fa-angle-right"></i></a>
+                <a href="categories/collection.html?category=collection">SPRING 2022 <i class="fa-solid fa-angle-right"></i></a>
+                <a href="categories/home.html?category=home">HOME <i class="fa-solid fa-angle-right"></i></a>
+                <a href="categories/women.html?category=women">WOMEN <i class="fa-solid fa-angle-right"></i></a>
+                <a href="categories/men.html?category=men">MEN <i class="fa-solid fa-angle-right"></i></a>
+                <a href="categories/kids.html?category=kids">KIDS <i class="fa-solid fa-angle-right"></i></a>
             </nav>
         </div>
+        
+        <section class = "basket-container">
+            <h1>Your Basket</h1>
+            <div class="basket-items">
+                <table id = "basketTable">
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+
+                <tr class = "basket-info">
+                    <td class = "item-thumb">
+                        <div class="item-img"></div>
+                        <div class="item-name">Sample Item 1</div>
+                    </td>
+                    <td class = "item-price">£299</td>
+                    <td class = "item-amount">1</td>
+                </tr>
+
+                <tr class = "basket-info">
+                    <td class = "item-thumb">
+                        <div class="item-img"></div>
+                        <div class="item-name">Sample Item 1</div>
+                    </td>
+                    <td class = "item-price">£299</td>
+                    <td class = "item-amount">1</td>
+                </tr>
+
+                <tr class = "basket-info">
+                    <td class = "item-thumb">
+                        <div class="item-img"></div>
+                        <div class="item-name">Sample Item 1</div>
+                    </td>
+                    <td class = "item-price">£299</td>
+                    <td class = "item-amount">1</td>
+                </tr>
+            </table>
+            </div>
+            <div class="basket-summary">
+                <div class="summary-left">
+                    <div class="summary-item">
+                        <div class="summary-label">Total</div>
+                        <div class="summary-value" id = "total">£897</div>
+                    </div> 
+                    
+                    <div class="summary-item">
+                        <div class="summary-label">Delivery</div>
+                        <div class="summary-value" id = "delivery">£0</div>    
+                    </div>
+
+                    <div class="summary-item">
+                        <div class="summary-label">Subtotal</div>
+                        <div class="summary-value" id = "subtotal">£897</div>
+                    </div>
+                </div>
+
+
+                <div class="summary-right">
+                    <a href="checkout.html" class="btn-checkout">Checkout</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
