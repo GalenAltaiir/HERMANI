@@ -27,6 +27,7 @@ $small: .75rem;
         }
     } // end of heading
     .men-subcat{
+        height: 100vh;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 10px;
@@ -39,8 +40,9 @@ $small: .75rem;
         .product-type{
             display: grid;
             align-content: center;
-            max-width: 45vw;
-            max-height: 45vw;
+            max-width: 25vw;
+            max-height: 25vw;
+            aspect-ratio: 1/1;
             overflow: hidden;
             position: relative;
                 img{
@@ -52,6 +54,11 @@ $small: .75rem;
                 }
 
             .prod-name{
+                position: absolute;
+                left: 0;
+                top:0;
+                width: 100%;
+                height: 100%;
                 font-size: $large;
                 text-align: center;
                 color: white;

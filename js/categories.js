@@ -32,13 +32,10 @@
             let countEntries = entries.length
             
             for(let i = 0; i <= countEntries; i++){
-                let entry = entries[i] // refers to the first entry in the JSON
-                // delete above 1 line
-                let type = entries[i].type.toUpperCase();
+                let type = entries[i].type.toUpperCase(); // returns undefined in console but it does work ??????
                 let url = entries[i].type.toLowerCase();
                 let img = entries[i].img.path
                 container.innerHTML+=
-                // http://localhost/cockpit/api/collections/get/MenClothing?filter[$and][][category]=Men&filter[$and][][type]=Bag
                     `
                         <div class="product-type">
                         <a class="prod-name" href=../search.html?category=`+values[0][1]+`&type=`+url+`>`+type+`</a>
