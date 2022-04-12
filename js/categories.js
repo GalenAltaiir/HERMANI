@@ -6,7 +6,7 @@
                     values.push(param)
                 }
                 
-                const api = "http://hermani.atwebpages.com/api/collections/get/"+values[0][1]+"Categories"
+                const api = "https://hermani.atwebpages.com/api/collections/get/"+values[0][1]+"Categories"
                 console.log(api);
                 
                 async function getApi(){
