@@ -4,10 +4,12 @@
                     values.push(param)
                 }
 
-                let category = values[0][0]
+                let categoryRaw = values[0][0]
+                let category = categoryRaw.charAt(0).toUpperCase() + categoryRaw.slice(1)
+                
                 let prodID = values[0][1]
 
-                const api = "http://localhost/cockpit/api/collections/get/"+category+"Clothing?filter[_id]="+prodID
+                const api = "http://hermani.atwebpages.com/api/collections/get/"+category+"Clothing?filter[_id]="+prodID
                 let currentImg = document.getElementById("display-img");
 
     async function getApi(){
